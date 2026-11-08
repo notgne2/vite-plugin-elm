@@ -21,12 +21,12 @@ export default defineConfig({
     process.env.NODE_ENV === 'production' && !!process.env.CUSTOM_COMPILER ? { compiler: { compile: compileWithEOL2 } } : {}
   )],
   build: {
-    rollupOptions: {
+    rolldownOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        application: resolve(__dirname, 'application.html'),
-        elements: resolve(__dirname, 'elements.html'),
-        raw: resolve(__dirname, 'raw.html'),
+        main: resolve(import.meta.dirname, 'index.html'),
+        application: resolve(import.meta.dirname, 'application.html'),
+        elements: resolve(import.meta.dirname, 'elements.html'),
+        raw: resolve(import.meta.dirname, 'raw.html'),
       },
     },
   },
